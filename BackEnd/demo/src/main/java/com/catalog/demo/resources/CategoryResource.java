@@ -30,15 +30,13 @@ public class CategoryResource {
 	public CategoryService service;
 
 	@GetMapping
-	public ResponseEntity<Page<CategoryDTO>> findAll(		
-			@RequestParam(value = "pagina", defaultValue = "0") Integer pagina,
+	public ResponseEntity<Page<CategoryDTO>> findAll(@RequestParam(value = "pagina", defaultValue = "0") Integer pagina,
 			@RequestParam(value = "linhasPorPagina", defaultValue = "12") Integer linhasPorPagina,
 			@RequestParam(value = "direcao", defaultValue = "DESC") String direcao,
-			@RequestParam(value = "ordenarPor", defaultValue = "name") String ordenarPor
-			) {
-		
+			@RequestParam(value = "ordenarPor", defaultValue = "name") String ordenarPor) {
+
 		PageRequest pageRequest = PageRequest.of(pagina, linhasPorPagina, Direction.valueOf(direcao), ordenarPor);
-		
+
 		Page<CategoryDTO> list = service.findAllPaged(pageRequest);
 		return ResponseEntity.ok().body(list);
 	}
