@@ -29,19 +29,15 @@ public class Category implements Serializable {
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant updatedAt;
 	
-	@OneToMany
-	private List<Product> product_id;
-
 	public Category() {
 
 	}
 
-	public Category(Long id, String name, Instant createdAt, Instant updatedAt, List<Product> product_id) {
+	public Category(Long id, String name, Instant createdAt, Instant updatedAt) {
 		this.id = id;
 		this.name = name;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
-		this.product_id = product_id;
 	}
 
 	public Long getId() {
