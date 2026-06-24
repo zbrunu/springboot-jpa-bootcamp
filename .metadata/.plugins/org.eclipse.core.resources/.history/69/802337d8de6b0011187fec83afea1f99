@@ -1,5 +1,0 @@
-package com.catalog.demo.repositories;
-
-public interface ProductRepository {
-
-}

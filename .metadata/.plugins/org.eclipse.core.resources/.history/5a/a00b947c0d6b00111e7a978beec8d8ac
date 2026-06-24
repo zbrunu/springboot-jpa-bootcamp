@@ -1,5 +1,0 @@
-package com.catalog.demo.resources.exeptions;
-
-public class ResourceExceptionHandler {
-
-}
